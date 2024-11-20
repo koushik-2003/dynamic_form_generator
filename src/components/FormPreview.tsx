@@ -24,21 +24,21 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-4">
-      <h2 className="text-xl font-bold">{schema.formTitle}</h2>
-      <p>{schema.formDescription}</p>
+      <h2 className="text-xl font-bold text-black dark:text-white">{schema.formTitle}</h2>
+      <p className="text-black dark:text-white">{schema.formDescription}</p>
 
       {schema.fields.map((field: FormFieldProps) => (
         <div key={field.id} className="mb-4">
-          <label className="block mb-2">{field.label}</label>
+          <label className="block mb-2 text-black dark:text-white">{field.label}</label>
           {field.type === 'text' || field.type === 'email' || field.type === 'textarea' ? (
             <input
               type={field.type}
               placeholder={field.placeholder}
               {...register(field.id, { required: field.required })}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full bg-white text-black dark:bg-gray-800 dark:text-white dark:border-gray-600"
             />
           ) : field.type === 'select' ? (
-            <select {...register(field.id, { required: field.required })} className="border p-2 rounded w-full">
+            <select {...register(field.id, { required: field.required })} className="border p-2 rounded w-full bg-white text-black dark:bg-gray-800 dark:text-white dark:border-gray-600">
               {field.options?.map((option) => (
                 <option key={option.value} value={option.value}>
                   {option.label}
@@ -50,7 +50,7 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
         </div>
       ))}
 
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded dark:bg-blue-700">
         Submit
       </button>
     </form>

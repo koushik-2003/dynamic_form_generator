@@ -1,3 +1,53 @@
+/* Tailwind's default styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Dark Mode Styles */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1a202c; /* Dark background */
+  color: white; /* Light text */
+}
+
+/* Light-colored buttons and inputs in dark mode */
+body.dark .bg-blue-500 {
+  background-color: #3182ce; /* Darker blue */
+}
+
+body.dark .border {
+  border-color: #2d3748; /* Darker border for inputs */
+}
+
+body.dark .text-white {
+  color: #e2e8f0; /* Lighter text color */
+}
+
+body.dark .text-red-500 {
+  color: #f56565; /* Light red for error text */
+}
+
+/* Dark mode input field styles */
+body.dark .bg-white, body.dark .bg-gray-100 {
+  background-color: #2d3748; /* Dark background for inputs */
+}
+
+body.dark .text-black, body.dark .text-gray-900 {
+  color: #e2e8f0; /* Lighter text color for input text */
+}
+
+body.dark .border-gray-300 {
+  border-color: #4a5568; /* Darker border for inputs */
+}
+
+/* Additional dark mode styling for other elements */
+body.dark .bg-gray-800 {
+  background-color: #2d3748; /* Darker gray background */
+}
+
+body.dark .text-gray-300 {
+  color: #e2e8f0; /* Lighter gray text */
+}

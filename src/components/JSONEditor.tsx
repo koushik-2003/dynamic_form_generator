@@ -49,7 +49,7 @@ const JSONEditor: React.FC<JSONEditorProps> = ({ onChange, schema }) => {
   return (
     <div className="flex flex-col h-full">
       <textarea
-        className="flex-grow border p-2 rounded focus:outline-none focus:ring"
+        className="flex-grow border p-2 rounded focus:outline-none focus:ring bg-white text-black dark:bg-gray-800 dark:text-white dark:border-gray-600"
         value={jsonInput}
         onChange={handleInputChange}
         placeholder="Edit JSON here..."
