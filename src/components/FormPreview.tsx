@@ -18,7 +18,9 @@ const FormPreview: React.FC<FormPreviewProps> = ({ schema }) => {
   const { handleSubmit, register, formState: { errors } } = useForm();
   const onSubmit: SubmitHandler<any> = (data) => console.log(data);
 
-  if (!schema || !schema.fields) return <div>No fields to display</div>;
+  if (!schema || !schema.fields || !Array.isArray(schema.fields)) {
+    return <div>No fields to display</div>;
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-4">

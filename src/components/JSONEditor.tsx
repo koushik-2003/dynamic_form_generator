@@ -7,7 +7,7 @@ interface JSONEditorProps {
 }
 
 const JSONEditor: React.FC<JSONEditorProps> = ({ onChange, schema }) => {
-  const [jsonInput, setJsonInput] = useState<string>('');
+  const [jsonInput, setJsonInput] = useState<string>(JSON.stringify(schema, null, 2));
   const [errors, setErrors] = useState<string[]>([]);
 
   const validator = new Validator();
@@ -39,7 +39,6 @@ const JSONEditor: React.FC<JSONEditorProps> = ({ onChange, schema }) => {
       }
     } catch (error) {
       if (error instanceof Error) {
-        // Narrow the type and use the `message` property
         setErrors([`Invalid JSON: ${error.message}`]);
       } else {
         setErrors(['An unknown error occurred.']);
