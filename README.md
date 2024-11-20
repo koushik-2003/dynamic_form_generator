@@ -191,7 +191,7 @@ To deploy the application using Vercel:
 
 You can view the deployed application at the following link:
 
-[Dynamic Form Generator]([https://dynamic-form-generator-28pizxpso-koushiks-projects-57d53e0a.vercel.app])
+[Dynamic Form Generator](https://dynamic-form-generator-28pizxpso-koushiks-projects-57d53e0a.vercel.app)
 
 ## Contributing
 
